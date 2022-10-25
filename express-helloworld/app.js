@@ -1,11 +1,13 @@
 var express = require('express');
+const res = require('express/lib/response');
 app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World!\n');
+app.get('/', function(req, res) {
+    res.send('Hello World!\n');
 });
-
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!');
+app.get('/mars', function(reg, res) {
+    res.send("HELLO MARS!\n");
 });
-
+app.listen(8080, function() {
+    console.log('Example app listening on port 8080!');
+});
